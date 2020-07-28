@@ -11,9 +11,9 @@ class Chat extends Component {
 	state = {
 		content: '',
 		isShow: false,
-	};
-
-	componentWillMount() {
+  };
+  
+	componentDidMount() {
 		const emojis = [
 			'😀',
 			'😁',
@@ -63,9 +63,6 @@ class Chat extends Component {
 			'🤣',
 		];
 		this.emojis = emojis.map((emoji) => ({ text: emoji }));
-	}
-
-	componentDidMount() {
 		window.scrollTo(0, document.body.scrollHeight);
 	}
 
@@ -153,7 +150,6 @@ class Chat extends Component {
 
 				<div className="am-tab-bar">
 					<InputItem
-						// placeholder="请输入"
 						value={this.state.content}
 						onChange={(val) => this.setState({ content: val })}
 						onFocus={() => this.setState({ isShow: false })}
