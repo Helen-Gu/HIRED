@@ -6,12 +6,12 @@ class NotFound extends React.Component {
 		return (
 			<div>
 				<div>
-					<h2>抱歉，找不到该页面!</h2>
+					<h2>Oops! Not Found</h2>
 					<Button
 						type="primary"
 						onClick={() => this.props.history.replace('/')}
 					>
-						回到首页
+						Take Me Home
 					</Button>
 				</div>
 			</div>

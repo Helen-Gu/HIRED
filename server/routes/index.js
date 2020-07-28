@@ -15,7 +15,7 @@ router.post('/register', function (req, res) {
 
 	UserModel.findOne({ username }, function (err, user) {
 		if (user) {
-			res.send({ code: 1, msg: '此用户已存在' });
+			res.send({ code: 1, msg: 'User already exists' });
 		} else {
 			new UserModel({ username, type, password: md5(password) }).save(
 				function (error, user) {
@@ -31,7 +31,6 @@ router.post('/register', function (req, res) {
 	});
 });
 
-// 登陆的路由
 router.post('/login', function (req, res) {
 	const { username, password } = req.body;
 
@@ -44,7 +43,7 @@ router.post('/login', function (req, res) {
 
 			res.send({ code: 0, data: user });
 		} else {
-			res.send({ code: 1, msg: '用户名或密码不正确!' });
+			res.send({ code: 1, msg: 'The username or password is incorrect' });
 		}
 	});
 });
@@ -53,7 +52,7 @@ router.post('/update', function (req, res) {
 	const userid = req.cookies.userid;
 
 	if (!userid) {
-		return res.send({ code: 1, msg: '请先登陆' });
+		return res.send({ code: 1, msg: 'Please login first' });
 	}
 
 	const user = req.body;
@@ -64,7 +63,7 @@ router.post('/update', function (req, res) {
 		if (!oldUser) {
 			res.clearCookie('userid');
 
-			res.send({ code: 1, msg: '请先登陆' });
+			res.send({ code: 1, msg: 'Please login first' });
 		} else {
 			const { _id, username, type } = oldUser;
 			const data = Object.assign({ _id, username, type }, user);
@@ -78,7 +77,7 @@ router.get('/user', function (req, res) {
 	const userid = req.cookies.userid;
 
 	if (!userid) {
-		return res.send({ code: 1, msg: '请先登陆' });
+		return res.send({ code: 1, msg: 'Please login first' });
 	}
 
 	UserModel.findOne({ _id: userid }, filter, function (error, user) {
@@ -86,7 +85,7 @@ router.get('/user', function (req, res) {
 			res.send({ code: 0, data: user });
 		} else {
 			res.clearCookie('userid');
-			res.send({ code: 1, msg: '请先登陆' });
+			res.send({ code: 1, msg: 'Please login first' });
 		}
 	});
 });

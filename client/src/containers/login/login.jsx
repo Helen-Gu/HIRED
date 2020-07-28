@@ -45,37 +45,37 @@ class Login extends Component {
 
 		return (
 			<div>
-				<NavBar>硅&nbsp;谷&nbsp;直&nbsp;聘</NavBar>
+				<NavBar><h3>H&nbsp;I&nbsp;R&nbsp;E&nbsp;D</h3></NavBar>
 				<Logo />
 				<WingBlank>
 					<List>
 						{msg ? <div className="error-msg">{msg}</div> : null}
 						<WhiteSpace />
 						<InputItem
-							placeholder="请输入用户名"
+							placeholder="Username"
 							onChange={(val) => {
 								this.handleChange('username', val);
 							}}
 						>
-							用户名:
+							{/* 用户名: */}
 						</InputItem>
 						<WhiteSpace />
 						<InputItem
-							placeholder="请输入密码"
+							placeholder="Password"
 							type="password"
 							onChange={(val) => {
 								this.handleChange('password', val);
 							}}
 						>
-							密&nbsp;&nbsp;&nbsp;码:
+							{/* 密&nbsp;&nbsp;&nbsp;码: */}
 						</InputItem>
 						<WhiteSpace />
 
 						<Button type="primary" onClick={this.login}>
-							登&nbsp;&nbsp;&nbsp;陆
+							Sign In
 						</Button>
 						<WhiteSpace />
-						<Button onClick={this.toRegister}>还没有账户</Button>
+						<Button onClick={this.toRegister}>Register</Button>
 					</List>
 				</WingBlank>
 			</div>

@@ -24,7 +24,7 @@ function initIO(dispatch, userid) {
 		io.socket = io('ws://localhost:4000');
 
 		io.socket.on('receiveMsg', function (chatMsg) {
-			console.log('客户端接收服务器发送的消息', chatMsg);
+			console.log('Client recives msg from Server', chatMsg);
 
 			if (userid === chatMsg.from || userid === chatMsg.to) {
 				dispatch(receiveMsg(chatMsg, userid));
@@ -95,9 +95,9 @@ export const register = (user) => {
 	const { username, password, password2, type } = user;
 
 	if (!username) {
-		return errorMsg('用户名必须指定!');
+		return errorMsg('Username is required');
 	} else if (password !== password2) {
-		return errorMsg('2次密码要一致!');
+		return errorMsg('Passwords do not match. Try again.');
 	}
 
 	return async (dispatch) => {
@@ -117,9 +117,9 @@ export const login = (user) => {
 	const { username, password } = user;
 
 	if (!username) {
-		return errorMsg('用户名必须指定!');
+		return errorMsg('Username is required');
 	} else if (!password) {
-		return errorMsg('密码必须指定!');
+		return errorMsg('Passowrd is required');
 	}
 
 	return async (dispatch) => {

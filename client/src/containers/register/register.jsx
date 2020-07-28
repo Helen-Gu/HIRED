@@ -48,51 +48,53 @@ class Register extends Component {
 
 		return (
 			<div>
-				<NavBar>硅&nbsp;谷&nbsp;直&nbsp;聘</NavBar>
+				<NavBar>
+					<h3>H&nbsp;I&nbsp;R&nbsp;E&nbsp;D</h3>
+				</NavBar>
 				<Logo />
 				<WingBlank>
 					<List>
 						{msg ? <div className="error-msg">{msg}</div> : null}
 						<WhiteSpace />
 						<InputItem
-							placeholder="请输入用户名"
+							placeholder="Username"
 							onChange={(val) => {
 								this.handleChange('username', val);
 							}}
 						>
-							用户名:
+							{/* Username: */}
 						</InputItem>
 						<WhiteSpace />
 						<InputItem
-							placeholder="请输入密码"
+							placeholder="Password"
 							type="password"
 							onChange={(val) => {
 								this.handleChange('password', val);
 							}}
 						>
-							密&nbsp;&nbsp;&nbsp;码:
+							{/* Password: */}
 						</InputItem>
 						<WhiteSpace />
 						<InputItem
-							placeholder="请输入确认密码"
+							placeholder="Confirm password"
 							type="password"
 							onChange={(val) => {
 								this.handleChange('password2', val);
 							}}
 						>
-							确认密码:
+							{/* Confirm Password: */}
 						</InputItem>
 						<WhiteSpace />
 						<ListItem>
-							<span>用户类型:</span>
-							&nbsp;&nbsp;&nbsp;
+							{/* <span>Are you a:</span>
+							&nbsp;&nbsp;&nbsp; */}
 							<Radio
 								checked={type === 'dashen'}
 								onChange={() =>
 									this.handleChange('type', 'dashen')
 								}
 							>
-								大神
+								Talent
 							</Radio>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<Radio
@@ -101,15 +103,15 @@ class Register extends Component {
 									this.handleChange('type', 'laoban')
 								}
 							>
-								老板
+								Employer
 							</Radio>
 						</ListItem>
 						<WhiteSpace />
 						<Button type="primary" onClick={this.register}>
-							注&nbsp;&nbsp;&nbsp;册
+							Register
 						</Button>
 						<WhiteSpace />
-						<Button onClick={this.toLogin}>已有账户</Button>
+						<Button onClick={this.toLogin}>Sign In</Button>
 					</List>
 				</WingBlank>
 			</div>

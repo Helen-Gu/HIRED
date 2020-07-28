@@ -22,30 +22,30 @@ class Main extends Component {
 		{
 			path: '/laoban',
 			component: Laoban,
-			title: '大神列表',
+			title: 'Talents',
 			icon: 'dashen',
-			text: '大神',
+			text: 'Talents',
 		},
 		{
 			path: '/dashen',
 			component: Dashen,
-			title: '老板列表',
+			title: 'Employers',
 			icon: 'laoban',
-			text: '老板',
+			text: 'Employers',
 		},
 		{
 			path: '/message',
 			component: Message,
-			title: '消息列表',
+			title: 'Chats',
 			icon: 'message',
-			text: '消息',
+			text: 'Chats',
 		},
 		{
 			path: '/personal',
 			component: Personal,
-			title: '用户中心',
+			title: 'Me',
 			icon: 'personal',
-			text: '个人',
+			text: 'Me',
 		},
 	];
 

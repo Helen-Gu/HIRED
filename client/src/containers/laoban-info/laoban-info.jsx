@@ -40,42 +40,42 @@ class LaobanInfo extends Component {
 
 		return (
 			<div>
-				<NavBar>老板信息完善</NavBar>
+				<NavBar>Hiring Info</NavBar>
 				<HeaderSelector setHeader={this.setHeader} />
 				<InputItem
-					placeholder="请输入招聘职位"
+					placeholder="Position"
 					onChange={(val) => {
 						this.handleChange('post', val);
 					}}
 				>
-					招聘职位:
+					{/* Position: */}
 				</InputItem>
 				<InputItem
-					placeholder="请输入公司名称"
+					placeholder="Company Name"
 					onChange={(val) => {
 						this.handleChange('company', val);
 					}}
 				>
-					公司名称:
+					{/* Company Name: */}
 				</InputItem>
 				<InputItem
-					placeholder="请输入职位薪资"
+					placeholder="Salary"
 					onChange={(val) => {
 						this.handleChange('salary', val);
 					}}
 				>
-					职位薪资:
+					{/* Salary: */}
 				</InputItem>
 				<TextareaItem
-					title="职位要求:"
-					placeholder="请输入个人介绍"
+					// title="Requirements"
+					placeholder="Requirements"
 					rows={3}
 					onChange={(val) => {
 						this.handleChange('info', val);
 					}}
 				/>
 				<Button type="primary" onClick={this.save}>
-					保&nbsp;&nbsp;&nbsp;存
+					Save
 				</Button>
 			</div>
 		);

@@ -9,13 +9,12 @@ const Brief = Item.Brief;
 
 class Personal extends React.Component {
 	logout = () => {
-		Modal.alert('退出', '确定退出登陆吗?', [
-			{ text: '取消' },
+		Modal.alert('Logout', 'Are you sure you want to log out?', [
+			{ text: 'Cancal' },
 			{
-				text: '确定',
+				text: 'Yes',
 				onPress: () => {
 					Cookies.remove('userid');
-
 					this.props.resetUser();
 				},
 			},
@@ -45,17 +44,17 @@ class Personal extends React.Component {
 					message={company}
 				/>
 
-				<List renderHeader={() => '相关信息'}>
+				<List renderHeader={() => 'My profile'}>
 					<Item multipleLine>
-						<Brief>职位: {post}</Brief>
-						<Brief>简介: {info}</Brief>
-						{salary ? <Brief>薪资: {salary}</Brief> : null}
+						<Brief>Position: {post}</Brief>
+						<Brief>Info: {info}</Brief>
+						{salary ? <Brief>Salary: {salary}</Brief> : null}
 					</Item>
 				</List>
 				<WhiteSpace />
 				<List>
 					<Button type="warning" onClick={this.logout}>
-						退出登录
+						Logout
 					</Button>
 				</List>
 			</div>

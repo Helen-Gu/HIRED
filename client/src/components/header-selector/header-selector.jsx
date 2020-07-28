@@ -16,8 +16,8 @@ export default class HeaderSelector extends Component {
 		this.headerList = [];
 		for (let i = 0; i < 20; i++) {
 			this.headerList.push({
-				text: '头像' + (i + 1),
-				icon: require(`../../assets/images/头像${i + 1}.png`),
+				text: 'Avatar' + (i + 1),
+				icon: require(`../../assets/images/Avatar${i + 1}.png`),
 			});
 		}
 	}
@@ -30,10 +30,10 @@ export default class HeaderSelector extends Component {
 	render() {
 		const { icon } = this.state;
 		const listHeader = !icon ? (
-			'请选择头像'
+			'Please select a avatar'
 		) : (
 			<div>
-				已选择头像:
+				Selected:
 				<img src={icon} />
 			</div>
 		);

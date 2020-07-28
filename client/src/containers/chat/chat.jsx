@@ -141,7 +141,7 @@ class Chat extends Component {
 									<Item
 										key={msg._id}
 										className="chat-me"
-										extra="我"
+										extra="Me"
 									>
 										{msg.content}
 									</Item>
@@ -153,7 +153,7 @@ class Chat extends Component {
 
 				<div className="am-tab-bar">
 					<InputItem
-						placeholder="请输入"
+						// placeholder="请输入"
 						value={this.state.content}
 						onChange={(val) => this.setState({ content: val })}
 						onFocus={() => this.setState({ isShow: false })}
@@ -165,7 +165,7 @@ class Chat extends Component {
 								>
 									😊
 								</span>
-								<span onClick={this.handleSend}>发送</span>
+								<span onClick={this.handleSend}>Send</span>
 							</span>
 						}
 					/>
