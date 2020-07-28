@@ -49,8 +49,8 @@ module.exports = function override(config, env) {
 				options: {
 					// theme vars, also can use theme.js instead of this.
 					modifyVars: {
-						'@brand-primary': '#1cae82',
-						'@brand-primary-tap': '#1DA57A',
+						'@brand-primary': '#365363',
+						'@brand-primary-tap': '#283e4a',
 					},
 				},
 			},

@@ -11,8 +11,8 @@ class Chat extends Component {
 	state = {
 		content: '',
 		isShow: false,
-  };
-  
+	};
+
 	componentDidMount() {
 		const emojis = [
 			'😀',
@@ -129,13 +129,14 @@ class Chat extends Component {
 						{msgs.map((msg) => {
 							if (targetId === msg.from) {
 								return (
-									<Item key={msg._id} thumb={targetIcon}>
+									<Item wrap key={msg._id} thumb={targetIcon}>
 										{msg.content}
 									</Item>
 								);
 							} else {
 								return (
 									<Item
+										wrap
 										key={msg._id}
 										className="chat-me"
 										extra="Me"
